@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./reboot.css">
+    <link rel="stylesheet" href="./style.css">
+
+</head>
+
+<body>
+    <aside class="aside active">
+        <nav class="aside-nav">
+            <ul class="list">
+                <li class="item dropdown child-active">
+                    <div class="dropdown-top">
+                        <div class="dropdown-arrow">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960" width="24"><path d="M400-280v-400l200 200-200 200Z"/></svg>                        </div>
+                        <div class="dropdown-icon item-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="m123-240-43-43 292-291 167 167 241-241H653v-60h227v227h-59v-123L538-321 371-488 123-240Z"/></svg>
+                        </div>
+                        <span class="item-text">Summary metrics</span>
+                    </div>
+                    <div class="dropdown-content">
+                        <ul class="sublist">
+                            <li class="subitem"><a href="#summary-metrics"class="link active">Summary metrics yoy</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="item dropdown">
+                    <div class="dropdown-top">
+                        <div class="dropdown-arrow">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="" viewBox="0 -960 960 960" width="24"><path d="M400-280v-400l200 200-200 200Z"/></svg>                        </div>
+                        <div class="dropdown-icon item-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="M481-80q-82 0-155-31.5T198.5-197q-54.5-54-86-127T81-479q0-158 106.5-272T452-877v102q-115 11-192 95.5T183-479q0 124 87 210.5T481-182q72 0 136-32.5T726-306l88 51q-58 83-145.5 129T481-80Zm362-229-88-49q12-31 18-61.5t6-60.5q0-116-76.5-201T512-776v-102q157 11 263 124.5T881-484q0 45-9.5 88.5T843-309Z"/></svg>
+                        </div>
+                        <span class="item-text">Cohort Analysis</span>
+                    </div>
+                    <div class="dropdown-content">
+                        <ul class="sublist">
+                            <li class="item-title">Cohort summary</li>
+                            <li class="subitem"><a href="#financial-contribution"class="link">Cohort Financial Contribution</a></li>
+                            <li class="subitem"><a href="#repeat-revenue"class="link">Repeat Revenue Trend</a></li>
+                            <li class="subitem"><a href="#repeat-frequency"class="link">Repeat Frequency</a></li>
+                            <li class="item-title">Category Customer Behavior</li>
+                            <li class="subitem"><a href="#category"class="link">Category Economics Summary</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <!--  -->
+                <li class="item single-item">
+                    <a href="#geography" class="link">
+                        <div class="item-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="M480.089-490Q509-490 529.5-510.589q20.5-20.588 20.5-49.5Q550-589 529.411-609.5q-20.588-20.5-49.5-20.5Q451-630 430.5-609.411q-20.5 20.588-20.5 49.5Q410-531 430.589-510.5q20.588 20.5 49.5 20.5ZM480-159q133-121 196.5-219.5T740-552q0-117.79-75.292-192.895Q589.417-820 480-820t-184.708 75.105Q220-669.79 220-552q0 75 65 173.5T480-159Zm0 79Q319-217 239.5-334.5T160-552q0-150 96.5-239T480-880q127 0 223.5 89T800-552q0 100-79.5 217.5T480-80Zm0-472Z"/></svg> 
+                        </div>
+                        <span class="item-text">Geography</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <div class="icon-close">
+            <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960" width="20"><path d="M288-77.912 201.912-164l316-316-316-316L288-882.088 690.088-480 288-77.912Z"/></svg>
+        </div>
+    </aside>
+    <main class="main">
+        <!-- page start -->
+        <div class="page active" id="summary-metrics">
+            summary metrics yoy
+        </div>
+        <!-- page end -->
+
+        <!-- page start -->
+        <div class="page" id="category">
+            Category Economics Summary
+        </div>
+         <!-- page end -->
+
+        <!-- page start -->
+        <div class="page" id="financial-contribution">
+            Cohort Financial Contribution
+        </div>
+         <!-- page end -->
+        
+        <!-- page start -->
+        <div class="page" id="repeat-revenue">
+            Repeat Revenue Trend
+        </div>
+         <!-- page end -->
+
+        <!-- page start -->
+        <div class="page" id="repeat-frequency">
+            Repeat Frequency
+        </div>
+        <!-- page end -->
+
+        <!-- page start -->
+        <div class="page" id="geography">
+            Geography
+        </div>
+        <!-- page end -->
+    </main>
+    <script src="./script.js"></script>
+</body>
+</html>
