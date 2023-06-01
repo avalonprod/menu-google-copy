@@ -3,15 +3,30 @@ const dropdown = document.querySelectorAll('.dropdown')
 const dropdownTarget = document.querySelectorAll('.dropdown-top')
 const pages = document.querySelectorAll('.page')
 
+aside.addEventListener('mouseenter', ()=>{
+    aside.classList.add('active')
+    links.forEach((item, i)=>{
+        if(item.classList.contains('active')){
+            removeActive(dropdown, 'menu-active')
+            removeActive(dropdown, 'child-active')
+            openDropdown(item, 'menu-active')
+            openDropdown(item, 'child-active')
+        }
+    })
+})
+aside.addEventListener('mouseleave', ()=>{
+    aside.classList.remove('active')
+})
+
+
+
 dropdownTarget.forEach((item, i) => {
     item.addEventListener('click', ()=>{
-        aside.classList.add('active')
-        let j = 0;
-        dropdown[i].classList.toggle('menu-active')
-        for(j; j<dropdownTarget.length; j++) {
-            if(dropdown[j] !== dropdown[i]){
-                dropdown[j].classList.remove('menu-active')
-            }
+        if(dropdown[i].classList.contains('menu-active')){
+            dropdown[i].classList.remove('menu-active')
+        } else {
+            removeActive(dropdown, 'menu-active')
+            openDropdown(item, 'menu-active')
         }
     })
 })
@@ -20,15 +35,16 @@ const links = document.querySelectorAll('.link')
 
 links.forEach((item, i) => {
     item.addEventListener('click', ()=>{
-        aside.classList.add('active')
-        let j = 0;
-        for(j; j<links.length; j++) {
-            links[j].classList.remove('active')
-            links[j].parentElement.parentElement.parentElement.parentElement.classList.remove('child-active')
-            pages[j].classList.remove('active')
-        }
-        links[i].classList.add('active')
-        links[i].parentElement.parentElement.parentElement.parentElement.classList.add('child-active')
+        removeActive(links, 'active')
+        removeActive(pages, 'active')
+        item.classList.add('active')
+        
+        removeActive(dropdown, 'menu-active')
+        removeActive(dropdown, 'child-active')
+        
+        openDropdown(item, 'menu-active')
+        openDropdown(item, 'child-active')
+
         if(links[i].getAttribute('href')){
             let att = links[i].getAttribute('href').split('#')
             document.querySelector(`#${att[1]}`).classList.add('active')
@@ -36,25 +52,22 @@ links.forEach((item, i) => {
     })
 })
 
-document.addEventListener('click', (e)=>{
-    if(e.target?.attributes?.class?.value && e.target.attributes.class.value == 'aside-nav'){
-        aside.classList.toggle('active')
-        console.log(e.target)
-        let j = 0
-        for(j; j<links.length; j++) {
-            links[j].parentElement.parentElement.parentElement.parentElement.classList.remove('menu-active')
+
+
+function openDropdown(el, clazze){
+    if(el.tagName != 'BODY'){
+        if(el.classList.contains('dropdown')){
+            el.classList.add(`${clazze}`)
+            openDropdown(el.parentElement, clazze)
+        } else{
+            openDropdown(el.parentElement, clazze)
         }
-        links.forEach(item =>{
-            if(item.classList.contains('active')){
-                item.parentElement.parentElement.parentElement.parentElement.classList.add('menu-active')
-            }
-        })
+        
+    } else return
+}
+
+function removeActive(items, classRemove){
+    for(let j = 0; j<items.length; j++) {
+        items[j].classList.remove(`${classRemove}`)
     }
-})
-
-
-const iconToggle = document.querySelector('.icon-close')
-
-iconToggle.addEventListener('click', ()=>{
-    aside.classList.toggle('active')
-})
+}

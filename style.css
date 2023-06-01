@@ -33,23 +33,20 @@ a{
     top: 0;
     left: 0;
     width: 66px;
-    min-height: 100vh;
+    height: 100vh;
     background-color: var(--aside-background);
+    border-right: 1px solid var(--aside-border-color);
     display: flex;
     flex-direction: column;
     transition: all .2s;
     font-size: 1px;
+    overflow-y: scroll;
 }
 
 .aside.active{
     width: 240px;
     transition: all .2s;
     font-size: 14px;
-}
-
-.aside-nav{
-    flex: 1 0 auto;
-    border-bottom: 1px solid var(--aside-border-color);
 }
 
 .dropdown-top, .item .link{
@@ -67,8 +64,16 @@ a{
     height: 40px;
 }
 
+.dropdown-top:hover{
+    background-color: var(--hover-background);
+}
+
 .dropdown.child-active .dropdown-top{
     background-color: var(--dropdown-active-background);
+}
+
+.subitem-dropdown .dropdown-top{
+    padding-left: 50px;
 }
 
 .dropdown-arrow{
@@ -79,7 +84,14 @@ a{
     transform: rotateZ(90deg);
     transition: all .1s;
     fill: #3c4043;
-    
+}
+
+.subitem-dropdown{
+    display: none;
+}
+
+.aside.active .subitem-dropdown{
+    display: block;
 }
 
 .item-text{
@@ -89,6 +101,10 @@ a{
 
 .aside.active .item-text{
     display: block;
+}
+
+.subitem-dropdown .item-text{
+    margin-left: 0px;
 }
 
 .item-icon{
@@ -118,6 +134,8 @@ a{
     display: block;
 }
 
+/* SUBLIST */
+
 .sublist{
     display: none;
 }
@@ -136,48 +154,37 @@ a{
     height: 40px;
 }
 
-.subitem .link{
-    padding: 0 0 0 70px;
-    display: none;
+.sublist .link{
+    padding: 0 0 0 80px;
 }
 
-.aside.active .subitem .link{
-    display: flex;
-}
 
 .dropdown.menu-active .sublist{
     display: block;
 }
 
-.icon-close{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    margin: 0 auto;
-    padding: 9px;
-    cursor: pointer;
-    border-radius: 50%;
+.dropdown .sublist-dropdown{
+    display: none;
 }
 
-.aside.active .icon-close{
-    margin: 0 10px 0 auto;
-    transform: rotateZ(180deg);
+.dropdown .subitem-dropdown.menu-active .sublist-dropdown{
+    display: block;
 }
 
-.icon-close:hover{
-    background-color: var(--hover-background);
+.dropdown .subitem-dropdown .dropdown-arrow{
+    transform: rotateZ(0);
 }
 
-.icon-close:hover svg{
-    fill: #3c4043;
+.dropdown .subitem-dropdown.active .dropdown-arrow{
+    transform: rotateZ(90deg);
 }
 
-.icon-close svg{
-    width: 16px;
-    height: 16px;
-    fill: #727273;
+.dropdown.child-active .subitem-dropdown .dropdown-top{
+    background-color: transparent;
+}
+
+.dropdown.child-active .subitem-dropdown.child-active .dropdown-top{
+    background-color: var(--dropdown-active-background);
 }
 
 .page{
