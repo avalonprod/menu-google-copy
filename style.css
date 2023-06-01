@@ -154,6 +154,13 @@ a{
     height: 40px;
 }
 
+.single-item .link.active svg{
+    fill: #1967d2;
+}
+
+
+
+
 .sublist .link{
     padding: 0 0 0 80px;
     display: none;
