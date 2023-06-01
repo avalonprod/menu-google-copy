@@ -156,8 +156,12 @@ a{
 
 .sublist .link{
     padding: 0 0 0 80px;
+    display: none;
 }
 
+.aside.active .sublist .link{
+    display: flex;
+}
 
 .dropdown.menu-active .sublist{
     display: block;
@@ -181,6 +185,9 @@ a{
 
 .dropdown.child-active .subitem-dropdown .dropdown-top{
     background-color: transparent;
+}
+.dropdown.child-active .subitem-dropdown .dropdown-top:hover{
+    background-color: var(--hover-background);
 }
 
 .dropdown.child-active .subitem-dropdown.child-active .dropdown-top{
