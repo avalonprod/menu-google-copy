@@ -40,7 +40,7 @@ a{
     flex-direction: column;
     transition: all .2s;
     font-size: 1px;
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 
 .aside.active{
@@ -157,9 +157,6 @@ a{
 .single-item .link.active svg{
     fill: #1967d2;
 }
-
-
-
 
 .sublist .link{
     padding: 0 0 0 80px;
