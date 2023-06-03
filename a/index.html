@@ -1,0 +1,345 @@
+<link rel="stylesheet" href="style.css">
+<ui-view-wrapper _ngcontent-ng-c1773067442="" layoutdirection="column" uiviewname="leftnav" class="ng-star-inserted"><!----><div class="layout-column flex" flex="" layout="column" ui-view="leftnav" ng-style="{'display': $ctrl.noFlexbox ? 'block' : 'flex'}" style="display: flex;"><ga-nav id="ga-left-nav" dropdown-options="ctrl.navChoices" dropdown-selection="ctrl.navChoice" on-dropdown-change="ctrl.onNavChoiceChange(selection, shouldUpdateUrl)" layout-config="ctrl.layoutConfig" link-config="ctrl.linkConfig" bottom-layout-config="ctrl.bottomLayoutConfig" selected-id="ctrl.selectedId" url-params="ctrl.urlParams" menu-search="ctrl.showMenuSearch" on-expand="ctrl.onExpand()" layout="column" flex="" class="layout-column flex"><div ng-attr-aria-expanded="{{ctrl.expanded}}" class="ga-nav layout-column flex expanded" flex="" layout="column" ng-class="{collapsed: !ctrl.expanded, expanded: ctrl.expanded,
+    'group-expanded': ctrl.groupExpanded &amp;&amp; ctrl.expanded}" ng-click="ctrl.toggleNav($event)" role="navigation" aria-expanded="true">
+<!---->
+<!----><ga-nav-search class="guided-help-searchbox" ng-if="ctrl.menuSearch" ng-show="ctrl.expanded" on-menu-item-selected="ctrl.onMenuItemSelected(menuItemId, opt_viewtype)" role="search" aria-hidden="false"><md-icon id="nav-search-input-icon" class="material-icons-extended md-ga-theme google-material-icons" role="img" aria-label="search">search</md-icon>
+<md-autocomplete id="menu-search" tabindex="-1" md-autofocus="true" md-autoselect="true" md-search-text="searchText" md-search-text-change="ctrl.textChange()" md-input-class="md-autocomplete-input" md-items="suggestion in ctrl.getSuggestions(searchText)" md-item-text="suggestion.text" placeholder="Поиск в отчетах и Справке" md-input-id="nav-search-input" ga-autocomplete-click-outside="ctrl.focusOut()" md-menu-class="ga-nav-search-autocomplete" md-selected-item-change="ctrl.onItemSelected(suggestion.id, suggestion.index, suggestion.viewtype)" md-no-cache="true" class="md-ga-theme md-autofocus">        <md-autocomplete-wrap ng-class="{ 'md-whiteframe-z1': !floatingLabel,                         'md-menu-showing': !$mdAutocompleteCtrl.hidden,                         'md-show-clear-button': !!clearButton }" class="md-whiteframe-z1 md-show-clear-button">                      <!----><input type="text" tabindex="1" id="nav-search-input" name="input-6" ng-class="::inputClass" ng-if="!floatingLabel" autocomplete="off" ng-required="$mdAutocompleteCtrl.isRequired" ng-disabled="$mdAutocompleteCtrl.isDisabled" ng-readonly="$mdAutocompleteCtrl.isReadonly" ng-model="$mdAutocompleteCtrl.scope.searchText" ng-keydown="$mdAutocompleteCtrl.keydown($event)" ng-blur="$mdAutocompleteCtrl.blur($event)" ng-focus="$mdAutocompleteCtrl.focus($event)" placeholder="Поиск в отчетах и Справке" aria-label="Поиск в отчетах и Справке" ng-attr-aria-autocomplete="{{$mdAutocompleteCtrl.isDisabled ? undefined : 'list'}}" ng-attr-role="{{$mdAutocompleteCtrl.isDisabled ? undefined : 'combobox'}}" aria-haspopup="true" aria-expanded="false" ng-attr-aria-owns="{{$mdAutocompleteCtrl.hidden || $mdAutocompleteCtrl.isDisabled ? undefined : 'ul-' + $mdAutocompleteCtrl.id}}" ng-attr-aria-activedescendant="{{!$mdAutocompleteCtrl.hidden &amp;&amp; $mdAutocompleteCtrl.activeOption ? $mdAutocompleteCtrl.activeOption : undefined}}" class="ng-pristine ng-untouched ng-empty ng-valid-minlength ng-valid-maxlength md-autocomplete-input ng-valid ng-valid-required" aria-autocomplete="list" role="combobox" aria-invalid="false"><!---->          <!---->          <!---->                            </md-autocomplete-wrap></md-autocomplete>
+</ga-nav-search><!---->
+<!----><div class="ga-nav-link has-icon ng-hide" id="ga-nav-search-icon" ng-click="ctrl.expanded = true" ng-if="ctrl.menuSearch" ng-show="!ctrl.expanded" role="button" aria-hidden="true">
+<md-icon class="ga-link-icon material-icons-extended md-ga-theme google-material-icons" role="img" aria-label="search">search</md-icon>
+</div><!---->
+<div id="ga-nav-scroll-up"></div>
+<md-content flex="" id="ga-nav-main" class="_md md-ga-theme flex">
+<!----><!----><ga-nav-section ng-if="ctrl.getLink(section.id) &amp;&amp; section.sublinks.length > 0" ng-init="link=section" ng-repeat="section in ctrl.layoutConfig" section="ctrl.getLink(section.id)"><div id="overviewSection" class="ga-nav-section guided-help-overviewSection">
+<!---->
+<div class="container" ng-transclude="">
+<!----><div ng-include="'/analytics/app/common/components/nav/nav-link-recursive.html'"><!----><div ng-if="link.sublinks &amp;&amp; link.sublinks.length" class="ga-animate" style="">
+<!---->
+
+<!----><ga-nav-link ng-repeat="sublink in ctrl.getSublinks(link)" link="ctrl.getLink(sublink.id)" selected-path="ctrl.selectedPath" url-params="ctrl.urlParams" show-tooltip="!ctrl.expanded" ng-init="link = sublink"><div class="ga-nav-link guided-help-report-home has-icon" md-ink-ripple="#777777" ng-class="{'includes-active-state': ctrl.includesActiveState,
+   'is-active-state': ctrl.isActiveState,
+   'has-icon': ctrl.icon,
+   'is-group': ctrl.noLink,
+   ['guided-help-' + ctrl.link.additionalGuidedHelpId]: ctrl.link.additionalGuidedHelpId}" ng-click="ctrl.click($event)" ng-keydown="ctrl.keydown($event)" ng-attr-role="{{ctrl.getRole()}}" ng-attr-tabindex="{{ctrl.getTabindex()}}" ng-attr-aria-label="{{ctrl.getAriaLabel()}}" role="link" tabindex="-1" aria-label="Главная">
+<!----><report-link fixed-params="ctrl.params" ng-if="ctrl.navSref &amp;&amp; ctrl.urlParams===null" sref="app.report.home" tabindex="-1" aria-hidden="true"><a ui-state="$ctrl.sref" class="nav-link md-ga-theme" ui-state-params="$ctrl.stateParams" tabindex="-1" ng-transclude="" href="#/report-home/a270166155w379518021p291335226">
+<!----><div class="icon-text-container" ng-include="" src="'/analytics/app/common/components/nav/callouts.html'"><!---->
+<!----><md-icon aria-hidden="true" class="ga-link-icon material-icons-extended md-ga-theme md-font google-material-icons report-home-icon" md-font-icon="report-home-icon" ng-class="{'no-left-margin': ctrl.noLink}" ng-if="ctrl.icon &amp;&amp; !ctrl.isCustomIcon" role="img"></md-icon><!---->
+<!---->
+<span class="ga-nav-link-label" ng-class="{'ga-nav-link-no-icon': (!ctrl.noLink &amp;&amp; !ctrl.icon)}">
+<span>Главная</span>
+<!---->
+<!---->
+<!---->
+</span>
+
+</div>
+</a>
+</report-link><!---->
+<!---->
+<!---->
+<!---->
+<!---->
+</div>
+<!---->
+</ga-nav-link><!---->
+</div><!---->
+</div>
+</div>
+</div>
+</ga-nav-section><!----><!----><!----><ga-nav-section ng-if="ctrl.getLink(section.id) &amp;&amp; section.sublinks.length > 0" ng-init="link=section" ng-repeat="section in ctrl.layoutConfig" section="ctrl.getLink(section.id)"><div id="customizationSection" class="ga-nav-section guided-help-customizationSection">
+<!---->
+<div class="container" ng-transclude="">
+<!----><div ng-include="'/analytics/app/common/components/nav/nav-link-recursive.html'"><!----><div ng-if="link.sublinks &amp;&amp; link.sublinks.length" class="ga-animate" style="">
+<!---->
+
+<!----><ga-nav-link ng-repeat="sublink in ctrl.getSublinks(link)" link="ctrl.getLink(sublink.id)" selected-path="ctrl.selectedPath" url-params="ctrl.urlParams" show-tooltip="!ctrl.expanded" ng-init="link = sublink"><div class="ga-nav-link guided-help-customization has-icon is-group" md-ink-ripple="#777777" ng-class="{'includes-active-state': ctrl.includesActiveState,
+   'is-active-state': ctrl.isActiveState,
+   'has-icon': ctrl.icon,
+   'is-group': ctrl.noLink,
+   ['guided-help-' + ctrl.link.additionalGuidedHelpId]: ctrl.link.additionalGuidedHelpId}" ng-click="ctrl.click($event)" ng-keydown="ctrl.keydown($event)" ng-attr-role="{{ctrl.getRole()}}" ng-attr-tabindex="{{ctrl.getTabindex()}}" ng-attr-aria-label="{{ctrl.getAriaLabel()}}" role="button" tabindex="-1" aria-label="У &quot;Специальные отчеты&quot; в состоянии &quot;свернуто&quot; есть меню">
+<!---->
+<!---->
+<!---->
+<!----><a ng-if="ctrl.noLink" ng-class="{'open-link-in-new': ctrl.openInNewTab}" tabindex="-1" class="md-ga-theme">
+<!----><div class="icon-text-container" ng-include="" src="'/analytics/app/common/components/nav/callouts.html'"><!----><md-icon aria-hidden="true" class="ga-nav-link-group ga-link-icon material-icons-extended md-ga-theme google-material-icons" ng-class="{'ga-nav-link-group-open': ctrl.groupExpanded}" ng-if="ctrl.noLink" role="img"></md-icon><!---->
+<!---->
+<!----><md-icon aria-hidden="true" class="ga-link-icon md-ga-theme no-left-margin" md-svg-icon="leftnav:customization-icon" ng-class="{'no-left-margin': ctrl.noLink}" ng-if="ctrl.isCustomIcon" role="img"><svg id="customization-icon_cache9" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fit="" height="100%" width="100%" preserveAspectRatio="xMidYMid meet" focusable="false">
+<path d="M13,3v8h8V3H13z M3,21h8v-8H3V21z M3,3v8h8V3H3z"></path>
+<path style="fill:none;" d="M0,0h24v24H0V0z"></path>
+<path d="M17.6,16.2v-2.4h-1.2v2.4H14v1.2h2.4v2.4h1.2v-2.4H20v-1.2H17.6z"></path>
+</svg></md-icon><!---->
+<span class="ga-nav-link-label" ng-class="{'ga-nav-link-no-icon': (!ctrl.noLink &amp;&amp; !ctrl.icon)}">
+<span>Специальные отчеты</span>
+<!---->
+<!---->
+<!---->
+</span>
+
+</div>
+</a><!---->
+<!---->
+</div>
+<!---->
+</ga-nav-link><!---->
+</div><!---->
+</div>
+</div>
+</div>
+</ga-nav-section><!----><!----><!----><ga-nav-section ng-if="ctrl.getLink(section.id) &amp;&amp; section.sublinks.length > 0" ng-init="link=section" ng-repeat="section in ctrl.layoutConfig" section="ctrl.getLink(section.id)"><div id="reporting" class="ga-nav-section guided-help-reporting">
+<!----><span ng-if="ctrl.label" class="ga-nav-section-title" aria-hidden="true">Отчеты</span><!---->
+<div class="container" ng-transclude="">
+<!----><div ng-include="'/analytics/app/common/components/nav/nav-link-recursive.html'"><!----><div ng-if="link.sublinks &amp;&amp; link.sublinks.length" class="ga-animate" style="">
+<!---->
+
+<!----><ga-nav-link ng-repeat="sublink in ctrl.getSublinks(link)" link="ctrl.getLink(sublink.id)" selected-path="ctrl.selectedPath" url-params="ctrl.urlParams" show-tooltip="!ctrl.expanded" ng-init="link = sublink"><div class="ga-nav-link guided-help-realtime-menu has-icon is-group" md-ink-ripple="#777777" ng-class="{'includes-active-state': ctrl.includesActiveState,
+   'is-active-state': ctrl.isActiveState,
+   'has-icon': ctrl.icon,
+   'is-group': ctrl.noLink,
+   ['guided-help-' + ctrl.link.additionalGuidedHelpId]: ctrl.link.additionalGuidedHelpId}" ng-click="ctrl.click($event)" ng-keydown="ctrl.keydown($event)" ng-attr-role="{{ctrl.getRole()}}" ng-attr-tabindex="{{ctrl.getTabindex()}}" ng-attr-aria-label="{{ctrl.getAriaLabel()}}" role="button" tabindex="-1" aria-label="У &quot;Отчет в реальном времени&quot; в состоянии &quot;свернуто&quot; есть меню">
+<!---->
+<!---->
+<!---->
+<!----><a ng-if="ctrl.noLink" ng-class="{'open-link-in-new': ctrl.openInNewTab}" tabindex="-1" class="md-ga-theme">
+<!----><div class="icon-text-container" ng-include="" src="'/analytics/app/common/components/nav/callouts.html'"><!----><md-icon aria-hidden="true" class="ga-nav-link-group ga-link-icon material-icons-extended md-ga-theme google-material-icons" ng-class="{'ga-nav-link-group-open': ctrl.groupExpanded}" ng-if="ctrl.noLink" role="img"></md-icon><!---->
+<!----><md-icon aria-hidden="true" class="ga-link-icon material-icons-extended md-ga-theme md-font google-material-icons realtime-icon no-left-margin" md-font-icon="realtime-icon" ng-class="{'no-left-margin': ctrl.noLink}" ng-if="ctrl.icon &amp;&amp; !ctrl.isCustomIcon" role="img"></md-icon><!---->
+<!---->
+<span class="ga-nav-link-label" ng-class="{'ga-nav-link-no-icon': (!ctrl.noLink &amp;&amp; !ctrl.icon)}">
+<span>Отчет в реальном времени</span>
+<!---->
+<!---->
+<!---->
+</span>
+
+</div>
+</a><!---->
+<!---->
+</div>
+<!---->
+</ga-nav-link><!----><ga-nav-link ng-repeat="sublink in ctrl.getSublinks(link)" link="ctrl.getLink(sublink.id)" selected-path="ctrl.selectedPath" url-params="ctrl.urlParams" show-tooltip="!ctrl.expanded" ng-init="link = sublink"><div class="ga-nav-link guided-help-visitors has-icon is-group" md-ink-ripple="#777777" ng-class="{'includes-active-state': ctrl.includesActiveState,
+   'is-active-state': ctrl.isActiveState,
+   'has-icon': ctrl.icon,
+   'is-group': ctrl.noLink,
+   ['guided-help-' + ctrl.link.additionalGuidedHelpId]: ctrl.link.additionalGuidedHelpId}" ng-click="ctrl.click($event)" ng-keydown="ctrl.keydown($event)" ng-attr-role="{{ctrl.getRole()}}" ng-attr-tabindex="{{ctrl.getTabindex()}}" ng-attr-aria-label="{{ctrl.getAriaLabel()}}" role="button" tabindex="-1" aria-label="У &quot;Аудитория&quot; в состоянии &quot;свернуто&quot; есть меню">
+<!---->
+<!---->
+<!---->
+<!----><a ng-if="ctrl.noLink" ng-class="{'open-link-in-new': ctrl.openInNewTab}" tabindex="-1" class="md-ga-theme">
+<!----><div class="icon-text-container" ng-include="" src="'/analytics/app/common/components/nav/callouts.html'"><!----><md-icon aria-hidden="true" class="ga-nav-link-group ga-link-icon material-icons-extended md-ga-theme google-material-icons" ng-class="{'ga-nav-link-group-open': ctrl.groupExpanded}" ng-if="ctrl.noLink" role="img"></md-icon><!---->
+<!----><md-icon aria-hidden="true" class="ga-link-icon material-icons-extended md-ga-theme md-font google-material-icons audience-icon no-left-margin" md-font-icon="audience-icon" ng-class="{'no-left-margin': ctrl.noLink}" ng-if="ctrl.icon &amp;&amp; !ctrl.isCustomIcon" role="img"></md-icon><!---->
+<!---->
+<span class="ga-nav-link-label" ng-class="{'ga-nav-link-no-icon': (!ctrl.noLink &amp;&amp; !ctrl.icon)}">
+<span>Аудитория</span>
+<!---->
+<!---->
+<!---->
+</span>
+
+</div>
+</a><!---->
+<!---->
+</div>
+<!---->
+</ga-nav-link><!----><ga-nav-link ng-repeat="sublink in ctrl.getSublinks(link)" link="ctrl.getLink(sublink.id)" selected-path="ctrl.selectedPath" url-params="ctrl.urlParams" show-tooltip="!ctrl.expanded" ng-init="link = sublink"><div class="ga-nav-link guided-help-acquisition has-icon is-group" md-ink-ripple="#777777" ng-class="{'includes-active-state': ctrl.includesActiveState,
+   'is-active-state': ctrl.isActiveState,
+   'has-icon': ctrl.icon,
+   'is-group': ctrl.noLink,
+   ['guided-help-' + ctrl.link.additionalGuidedHelpId]: ctrl.link.additionalGuidedHelpId}" ng-click="ctrl.click($event)" ng-keydown="ctrl.keydown($event)" ng-attr-role="{{ctrl.getRole()}}" ng-attr-tabindex="{{ctrl.getTabindex()}}" ng-attr-aria-label="{{ctrl.getAriaLabel()}}" role="button" tabindex="-1" aria-label="У &quot;Источник трафика&quot; в состоянии &quot;свернуто&quot; есть меню">
+<!---->
+<!---->
+<!---->
+<!----><a ng-if="ctrl.noLink" ng-class="{'open-link-in-new': ctrl.openInNewTab}" tabindex="-1" class="md-ga-theme">
+<!----><div class="icon-text-container" ng-include="" src="'/analytics/app/common/components/nav/callouts.html'"><!----><md-icon aria-hidden="true" class="ga-nav-link-group ga-link-icon material-icons-extended md-ga-theme google-material-icons" ng-class="{'ga-nav-link-group-open': ctrl.groupExpanded}" ng-if="ctrl.noLink" role="img"></md-icon><!---->
+<!---->
+<!----><md-icon aria-hidden="true" class="ga-link-icon md-ga-theme no-left-margin" md-svg-icon="leftnav:acquisition-icon" ng-class="{'no-left-margin': ctrl.noLink}" ng-if="ctrl.isCustomIcon" role="img"><svg id="acquisition-icon_cache10" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fit="" height="100%" width="100%" preserveAspectRatio="xMidYMid meet" focusable="false">
+<g>
+<path d="M8,17l4-4h3.2c0.4,1.2,1.5,2,2.8,2c1.7,0,3-1.3,3-3s-1.3-3-3-3c-1.3,0-2.4,0.8-2.8,2H12L8,7V3H3v5h3l4.2,4L6,16H3v5h5V17z"></path>
+</g>
+</svg></md-icon><!---->
+<span class="ga-nav-link-label" ng-class="{'ga-nav-link-no-icon': (!ctrl.noLink &amp;&amp; !ctrl.icon)}">
+<span>Источник трафика</span>
+<!---->
+<!---->
+<!---->
+</span>
+
+</div>
+</a><!---->
+<!---->
+</div>
+<!---->
+</ga-nav-link><!----><ga-nav-link ng-repeat="sublink in ctrl.getSublinks(link)" link="ctrl.getLink(sublink.id)" selected-path="ctrl.selectedPath" url-params="ctrl.urlParams" show-tooltip="!ctrl.expanded" ng-init="link = sublink"><div class="ga-nav-link guided-help-content has-icon is-group" md-ink-ripple="#777777" ng-class="{'includes-active-state': ctrl.includesActiveState,
+   'is-active-state': ctrl.isActiveState,
+   'has-icon': ctrl.icon,
+   'is-group': ctrl.noLink,
+   ['guided-help-' + ctrl.link.additionalGuidedHelpId]: ctrl.link.additionalGuidedHelpId}" ng-click="ctrl.click($event)" ng-keydown="ctrl.keydown($event)" ng-attr-role="{{ctrl.getRole()}}" ng-attr-tabindex="{{ctrl.getTabindex()}}" ng-attr-aria-label="{{ctrl.getAriaLabel()}}" role="button" tabindex="-1" aria-label="У &quot;Поведение&quot; в состоянии &quot;свернуто&quot; есть меню">
+<!---->
+<!---->
+<!---->
+<!----><a ng-if="ctrl.noLink" ng-class="{'open-link-in-new': ctrl.openInNewTab}" tabindex="-1" class="md-ga-theme">
+<!----><div class="icon-text-container" ng-include="" src="'/analytics/app/common/components/nav/callouts.html'"><!----><md-icon aria-hidden="true" class="ga-nav-link-group ga-link-icon material-icons-extended md-ga-theme google-material-icons" ng-class="{'ga-nav-link-group-open': ctrl.groupExpanded}" ng-if="ctrl.noLink" role="img"></md-icon><!---->
+<!----><md-icon aria-hidden="true" class="ga-link-icon material-icons-extended md-ga-theme md-font google-material-icons behavior-icon no-left-margin" md-font-icon="behavior-icon" ng-class="{'no-left-margin': ctrl.noLink}" ng-if="ctrl.icon &amp;&amp; !ctrl.isCustomIcon" role="img"></md-icon><!---->
+<!---->
+<span class="ga-nav-link-label" ng-class="{'ga-nav-link-no-icon': (!ctrl.noLink &amp;&amp; !ctrl.icon)}">
+<span>Поведение</span>
+<!---->
+<!---->
+<!---->
+</span>
+
+</div>
+</a><!---->
+<!---->
+</div>
+<!---->
+</ga-nav-link><!----><ga-nav-link ng-repeat="sublink in ctrl.getSublinks(link)" link="ctrl.getLink(sublink.id)" selected-path="ctrl.selectedPath" url-params="ctrl.urlParams" show-tooltip="!ctrl.expanded" ng-init="link = sublink"><div class="ga-nav-link guided-help-conversions has-icon is-group" md-ink-ripple="#777777" ng-class="{'includes-active-state': ctrl.includesActiveState,
+   'is-active-state': ctrl.isActiveState,
+   'has-icon': ctrl.icon,
+   'is-group': ctrl.noLink,
+   ['guided-help-' + ctrl.link.additionalGuidedHelpId]: ctrl.link.additionalGuidedHelpId}" ng-click="ctrl.click($event)" ng-keydown="ctrl.keydown($event)" ng-attr-role="{{ctrl.getRole()}}" ng-attr-tabindex="{{ctrl.getTabindex()}}" ng-attr-aria-label="{{ctrl.getAriaLabel()}}" role="button" tabindex="-1" aria-label="У &quot;Конверсии&quot; в состоянии &quot;свернуто&quot; есть меню">
+<!---->
+<!---->
+<!---->
+<!----><a ng-if="ctrl.noLink" ng-class="{'open-link-in-new': ctrl.openInNewTab}" tabindex="-1" class="md-ga-theme">
+<!----><div class="icon-text-container" ng-include="" src="'/analytics/app/common/components/nav/callouts.html'"><!----><md-icon aria-hidden="true" class="ga-nav-link-group ga-link-icon material-icons-extended md-ga-theme google-material-icons" ng-class="{'ga-nav-link-group-open': ctrl.groupExpanded}" ng-if="ctrl.noLink" role="img"></md-icon><!---->
+<!----><md-icon aria-hidden="true" class="ga-link-icon material-icons-extended md-ga-theme md-font google-material-icons conversions-icon no-left-margin" md-font-icon="conversions-icon" ng-class="{'no-left-margin': ctrl.noLink}" ng-if="ctrl.icon &amp;&amp; !ctrl.isCustomIcon" role="img"></md-icon><!---->
+<!---->
+<span class="ga-nav-link-label" ng-class="{'ga-nav-link-no-icon': (!ctrl.noLink &amp;&amp; !ctrl.icon)}">
+<span>Конверсии</span>
+<!---->
+<!---->
+<!---->
+</span>
+
+</div>
+</a><!---->
+<!---->
+</div>
+<!---->
+</ga-nav-link><!---->
+</div><!---->
+</div>
+</div>
+</div>
+</ga-nav-section><!----><!---->
+</md-content>
+<div id="ga-nav-scroll-down"></div>
+<!----><!----><ga-nav-section class="ga-nav-bottom-section" ng-if="ctrl.getLink(section.id) &amp;&amp; ctrl.bottomLayoutConfig" ng-init="link=section" ng-repeat="section in ctrl.bottomLayoutConfig" section="ctrl.getLink(section.id)"><div id="bottom-section-attribution" class="ga-nav-section guided-help-bottom-section-attribution">
+<!---->
+<div class="container" ng-transclude="">
+<!----><div ng-repeat="link in link.sublinks">
+<ga-nav-link link="ctrl.getLink(link.id)" selected-path="ctrl.selectedPath" show-tooltip="!ctrl.expanded" url-params="ctrl.urlParams"><div class="ga-nav-link guided-help-attribution-orbital has-icon" md-ink-ripple="#777777" ng-class="{'includes-active-state': ctrl.includesActiveState,
+   'is-active-state': ctrl.isActiveState,
+   'has-icon': ctrl.icon,
+   'is-group': ctrl.noLink,
+   ['guided-help-' + ctrl.link.additionalGuidedHelpId]: ctrl.link.additionalGuidedHelpId}" ng-click="ctrl.click($event)" ng-keydown="ctrl.keydown($event)" ng-attr-role="{{ctrl.getRole()}}" ng-attr-tabindex="{{ctrl.getTabindex()}}" ng-attr-aria-label="{{ctrl.getAriaLabel()}}" role="link" tabindex="-1" aria-label="Атрибуция">
+<!---->
+<!----><a ng-href="/analytics/attribution/welcome/a270166155w379518021p291335226?utm_source=analytics.google.com&amp;utm_medium=leftnav&amp;authuser=1" ng-if="ctrl.navHref" tabindex="-1" ng-class="{'open-link-in-new': ctrl.openInNewTab}" target="_blank" class="md-ga-theme open-link-in-new" href="/analytics/attribution/welcome/a270166155w379518021p291335226?utm_source=analytics.google.com&amp;utm_medium=leftnav&amp;authuser=1">
+<!----><div class="icon-text-container" ng-include="" src="'/analytics/app/common/components/nav/callouts.html'"><!---->
+<!---->
+<!----><md-icon aria-hidden="true" class="ga-link-icon md-ga-theme" md-svg-icon="leftnav:attribution-orbital-icon" ng-class="{'no-left-margin': ctrl.noLink}" ng-if="ctrl.isCustomIcon" role="img"><svg id="attribution-orbital-icon_cache8" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fit="" height="100%" width="100%" preserveAspectRatio="xMidYMid meet" focusable="false">
+<defs>
+<style>.cls-1{fill:none;}.cls-2{fill:#606469;}</style>
+</defs>
+<g data-name="Layer 2" id="Layer_2_cache8">
+<g id="ga_attribution_cache8">
+<g data-name="ga_attribution" id="ga_attribution-2_cache8">
+<path class="cls-2" d="M19,15a3,3,0,0,0-2.82,2H11a2,2,0,0,1,0-4h2a4,4,0,0,0,0-8H7.82A3,3,0,1,0,5,9,3,3,0,0,0,7.82,7H13a2,2,0,0,1,0,4H11a4,4,0,0,0,0,8h5.18A3,3,0,1,0,19,15ZM5,7A1,1,0,1,1,6,6,1,1,0,0,1,5,7Z"></path>
+<rect class="cls-1" height="24" width="24"></rect>
+</g>
+</g>
+</g>
+<title>ga_attribution</title>
+</svg></md-icon><!---->
+<span class="ga-nav-link-label" ng-class="{'ga-nav-link-no-icon': (!ctrl.noLink &amp;&amp; !ctrl.icon)}">
+<span>Атрибуция</span>
+<!----><span class="ga-nav-link-beta" ng-if="ctrl.beta">
+БЕТА
+</span><!---->
+<!---->
+<!---->
+</span>
+
+</div>
+</a><!---->
+<!---->
+<!---->
+<!---->
+<div class="md-ripple-container" style=""></div></div>
+<!---->
+</ga-nav-link>
+</div><!---->
+</div>
+</div>
+</ga-nav-section><!----><!----><!----><ga-nav-section class="ga-nav-bottom-section" ng-if="ctrl.getLink(section.id) &amp;&amp; ctrl.bottomLayoutConfig" ng-init="link=section" ng-repeat="section in ctrl.bottomLayoutConfig" section="ctrl.getLink(section.id)"><div id="bottom-section-discover" class="ga-nav-section guided-help-bottom-section-discover">
+<!---->
+<div class="container" ng-transclude="">
+<!----><div ng-repeat="link in link.sublinks">
+<ga-nav-link link="ctrl.getLink(link.id)" selected-path="ctrl.selectedPath" show-tooltip="!ctrl.expanded" url-params="ctrl.urlParams"><div class="ga-nav-link guided-help-report-discover has-icon" md-ink-ripple="#777777" ng-class="{'includes-active-state': ctrl.includesActiveState,
+   'is-active-state': ctrl.isActiveState,
+   'has-icon': ctrl.icon,
+   'is-group': ctrl.noLink,
+   ['guided-help-' + ctrl.link.additionalGuidedHelpId]: ctrl.link.additionalGuidedHelpId}" ng-click="ctrl.click($event)" ng-keydown="ctrl.keydown($event)" ng-attr-role="{{ctrl.getRole()}}" ng-attr-tabindex="{{ctrl.getTabindex()}}" ng-attr-aria-label="{{ctrl.getAriaLabel()}}" role="link" tabindex="-1" aria-label="Рекомендуем">
+<!----><report-link fixed-params="ctrl.params" ng-if="ctrl.navSref &amp;&amp; ctrl.urlParams===null" sref="app.report.discover" tabindex="-1" aria-hidden="true"><a ui-state="$ctrl.sref" class="nav-link md-ga-theme" ui-state-params="$ctrl.stateParams" tabindex="-1" ng-transclude="" href="#/a270166155w379518021p291335226/report/discover">
+<!----><div class="icon-text-container" ng-include="" src="'/analytics/app/common/components/nav/callouts.html'"><!---->
+<!----><md-icon aria-hidden="true" class="ga-link-icon material-icons-extended md-ga-theme md-font google-material-icons discover-icon" md-font-icon="discover-icon" ng-class="{'no-left-margin': ctrl.noLink}" ng-if="ctrl.icon &amp;&amp; !ctrl.isCustomIcon" role="img"></md-icon><!---->
+<!---->
+<span class="ga-nav-link-label" ng-class="{'ga-nav-link-no-icon': (!ctrl.noLink &amp;&amp; !ctrl.icon)}">
+<span>Рекомендуем</span>
+<!---->
+<!---->
+<!---->
+</span>
+
+</div>
+</a>
+</report-link><!---->
+<!---->
+<!---->
+<!---->
+<!---->
+</div>
+<!---->
+</ga-nav-link>
+</div><!---->
+</div>
+</div>
+</ga-nav-section><!----><!----><!----><ga-nav-section class="ga-nav-bottom-section" ng-if="ctrl.getLink(section.id) &amp;&amp; ctrl.bottomLayoutConfig" ng-init="link=section" ng-repeat="section in ctrl.bottomLayoutConfig" section="ctrl.getLink(section.id)"><div id="bottom-section-admin" class="ga-nav-section guided-help-bottom-section-admin">
+<!---->
+<div class="container" ng-transclude="">
+<!----><div ng-repeat="link in link.sublinks">
+<ga-nav-link link="ctrl.getLink(link.id)" selected-path="ctrl.selectedPath" show-tooltip="!ctrl.expanded" url-params="ctrl.urlParams"><div class="ga-nav-link guided-help-admin has-icon includes-active-state is-active-state" md-ink-ripple="#777777" ng-class="{'includes-active-state': ctrl.includesActiveState,
+   'is-active-state': ctrl.isActiveState,
+   'has-icon': ctrl.icon,
+   'is-group': ctrl.noLink,
+   ['guided-help-' + ctrl.link.additionalGuidedHelpId]: ctrl.link.additionalGuidedHelpId}" ng-click="ctrl.click($event)" ng-keydown="ctrl.keydown($event)" ng-attr-role="{{ctrl.getRole()}}" ng-attr-tabindex="{{ctrl.getTabindex()}}" ng-attr-aria-label="{{ctrl.getAriaLabel()}}" role="link" tabindex="0" aria-label="Администратор">
+<!----><report-link fixed-params="ctrl.params" ng-if="ctrl.navSref &amp;&amp; ctrl.urlParams===null" sref="app.admin" tabindex="-1" aria-hidden="true"><a ui-state="$ctrl.sref" class="nav-link md-ga-theme" ui-state-params="$ctrl.stateParams" tabindex="-1" ng-transclude="" href="#/a270166155w379518021p291335226/admin">
+<!----><div class="icon-text-container" ng-include="" src="'/analytics/app/common/components/nav/callouts.html'"><!---->
+<!----><md-icon aria-hidden="true" class="ga-link-icon material-icons-extended md-ga-theme md-font google-material-icons settings-icon" md-font-icon="settings-icon" ng-class="{'no-left-margin': ctrl.noLink}" ng-if="ctrl.icon &amp;&amp; !ctrl.isCustomIcon" role="img"></md-icon><!---->
+<!---->
+<span class="ga-nav-link-label" ng-class="{'ga-nav-link-no-icon': (!ctrl.noLink &amp;&amp; !ctrl.icon)}">
+<span>Администратор</span>
+<!---->
+<!---->
+<!---->
+</span>
+
+</div>
+</a>
+</report-link><!---->
+<!---->
+<!---->
+<!---->
+<!---->
+<div class="md-ripple-container" style=""></div></div>
+<!---->
+</ga-nav-link>
+</div><!---->
+</div>
+</div>
+</ga-nav-section><!----><!---->
+<div aria-label="Скрыть или показать навигацию" role="button" id="ga-nav-collapse" ng-click="ctrl.toggleNav($event)" tabindex="0">
+<md-icon class="material-icons-extended link-icon expand-collapse-icon md-ga-theme google-material-icons" role="img" aria-hidden="true"></md-icon>
+</div>
+</div>
+</ga-nav>
+</div></ui-view-wrapper>
