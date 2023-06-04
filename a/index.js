@@ -1,1 +1,0 @@
-document.querySelector("body > ga-hybrid-app-root > ui-view-wrapper > div > app-root > div > ui-view-wrapper")
